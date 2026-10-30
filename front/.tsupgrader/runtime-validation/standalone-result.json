@@ -1,0 +1,137 @@
+{
+  "planHash": "7a2ee169770288434bdcbe5eb4d5e0e4af75519edab72b00f199f595b41391ae",
+  "phase": "standalone",
+  "recordedAtUtc": "2026-10-29T21:51:18.6376178Z",
+  "retryCount": 0,
+  "resetBaseline": false,
+  "complete": true,
+  "result": {
+    "setupSucceeded": true,
+    "setupDurationMs": 535,
+    "setupFailureOutput": null,
+    "assertions": [
+      {
+        "name": "typescript-typecheck",
+        "kind": "process",
+        "verificationMethod": "exit-code",
+        "passed": true,
+        "timedOut": false,
+        "skipped": false,
+        "skippedReason": null,
+        "exitCode": 0,
+        "outputSample": "",
+        "durationMs": 1796
+      },
+      {
+        "name": "production-build",
+        "kind": "process",
+        "verificationMethod": "exit-code",
+        "passed": true,
+        "timedOut": false,
+        "skipped": false,
+        "skippedReason": null,
+        "exitCode": 0,
+        "outputSample": "$ vite build\r\n\u001B[36mvite v8.0.5 \u001B[32mbuilding client environment for production...\u001B[36m\u001B[39m\r\n\u001B[2K\r\ntransforming...\u2713 24 modules transformed.\r\nrendering chunks...\r\ncomputing gzip size...\r\ndist/robots.txt                   0.02 kB \u2502 gzip:  0.04 kB\r\ndist/index.html                   0.98 kB \u2502 gzip:  0.44 kB\r\ndist/assets/index-BHka1KrS.css   10.98 kB \u2502 gzip:  3.26 kB\r\ndist/assets/index-CWAa50b9.js   244.45 kB \u2502 gzip: 72.84 kB\r\n\r\n\u001B[32m\u2713 built in 171ms\u001B[39m\r\n",
+        "durationMs": 1012
+      },
+      {
+        "name": "tests-pass",
+        "kind": "process",
+        "verificationMethod": "test-results",
+        "passed": true,
+        "timedOut": false,
+        "skipped": false,
+        "skippedReason": null,
+        "exitCode": 0,
+        "outputSample": "$ vitest run\r\n\r\n RUN  v5.0.5 D:/ucsc/Data scientist journey/Projects/power/WindPower/front\r\n\r\n\r\n Test Files  1 passed (1)\r\n      Tests  2 passed (2)\r\n   Start at  03:21:17\r\n   Duration  202ms (import 57%, transform 22%, tests 16%, worker 5%)\r\n\r\n",
+        "durationMs": 1100,
+        "testResults": {
+          "testFramework": "vitest",
+          "runnerDetectedFrom": "package_json",
+          "testsTotal": 2,
+          "testsPassed": 2,
+          "testsFailed": 0,
+          "testsSkipped": 0,
+          "parseFailed": false
+        }
+      },
+      {
+        "name": "dev-server-serves-home",
+        "kind": "http-probe",
+        "verificationMethod": "http-status",
+        "passed": true,
+        "timedOut": false,
+        "skipped": false,
+        "skippedReason": null,
+        "exitCode": null,
+        "outputSample": "HTTP 200\n\u003C!doctype html\u003E\n\u003Chtml lang=\u0022en\u0022\u003E\n  \u003Chead\u003E\n    \u003Cscript type=\u0022module\u0022\u003Eimport { injectIntoGlobalHook } from \u0022/@react-refresh\u0022;\ninjectIntoGlobalHook(window);\nwindow.$RefreshReg$ = () =\u003E {};\nwindow.$RefreshSig$ = () =\u003E (type) =\u003E type;\u003C/script\u003E\n\n    \u003Cscript type=\u0022module\u0022 src=\u0022/@vite/client\u0022\u003E\u003C/script\u003E\n\n    \n    \u003Cmeta charset=\u0022UTF-8\u0022 /\u003E\n    \u003Cmeta name=\u0022viewport\u0022 content=\u0022width=device-width, initial-scale=1.0\u0022 /\u003E\n    \u003Ctitle\u003EFigma Make App\u003C/title\u003E\n    \n    \u003Cmeta name=\u0022description\u0022 content=\u0022Helps UK electricity teams monitor wind generation forecasts, honor purchasing cut-offs, and assess historical accuracy and forecast errors against Elexon actuals.\u0022\u003E\n    \u003Cmeta name=\u0022robots\u0022 content=\u0022noindex, nofollow\u0022\u003E\n    \u003Clink rel=\u0022icon\u0022 href=\u0022/favicon.svg\u0022\u003E\n    \u003Cmeta property=\u0022og:title\u0022 content=\u0022Figma Make App\u0022\u003E\n    \u003Cmeta property=\u0022og:description\u0022 content=\u0022Helps UK electricity teams monitor wind generation forecasts, honor purchasing cut-offs, and assess historical accuracy and forecast errors against Elexon actuals.\u0022\u003E\n  \u003C/head\u003E\n  \u003Cbody\u003E\n    \n    \u003Cdiv id=\u0022root\u0022\u003E\u003C/div\u003E\n    \u003Cscript type=\u0022module\u0022 src=\u0022/src/main.tsx\u0022\u003E\u003C/script\u003E\n    \n  \u003C/body\u003E\n\u003C/html\u003E\n\n--- server output ---\n$ vite\r\n\r\n  \u001B[32m\u001B[1mVITE\u001B[22m v8.0.5\u001B[39m  \u001B[2mready in \u001B[0m\u001B[1m359\u001B[22m\u001B[2m\u001B[0m ms\u001B[22m\r\n\r\n  \u001B[32m\u279C\u001B[39m  \u001B[1mLocal\u001B[22m:   \u001B[36mhttp://127.0.0.1:\u001B[1m5173\u001B[22m/\u001B[39m\r\n",
+        "durationMs": 1055
+      }
+    ],
+    "executions": [
+      {
+        "source": "setup[0]",
+        "resolvedExecutable": "C:\\Program Files\\nodejs\\pnpm.CMD",
+        "args": [
+          "install",
+          "--frozen-lockfile"
+        ],
+        "cwd": "D:\\ucsc\\Data scientist journey\\Projects\\power\\WindPower\\front",
+        "env": {},
+        "prependPath": [],
+        "platform": "win32"
+      },
+      {
+        "source": "typescript-typecheck",
+        "resolvedExecutable": "C:\\Program Files\\nodejs\\pnpm.CMD",
+        "args": [
+          "exec",
+          "tsc",
+          "--noEmit"
+        ],
+        "cwd": "D:\\ucsc\\Data scientist journey\\Projects\\power\\WindPower\\front",
+        "env": {},
+        "prependPath": [],
+        "platform": "win32"
+      },
+      {
+        "source": "production-build",
+        "resolvedExecutable": "C:\\Program Files\\nodejs\\pnpm.CMD",
+        "args": [
+          "run",
+          "build"
+        ],
+        "cwd": "D:\\ucsc\\Data scientist journey\\Projects\\power\\WindPower\\front",
+        "env": {},
+        "prependPath": [],
+        "platform": "win32"
+      },
+      {
+        "source": "tests-pass",
+        "resolvedExecutable": "C:\\Program Files\\nodejs\\pnpm.CMD",
+        "args": [
+          "test"
+        ],
+        "cwd": "D:\\ucsc\\Data scientist journey\\Projects\\power\\WindPower\\front",
+        "env": {},
+        "prependPath": [],
+        "platform": "win32"
+      },
+      {
+        "source": "dev-server-serves-home",
+        "resolvedExecutable": "C:\\Program Files\\nodejs\\pnpm.CMD",
+        "args": [
+          "run",
+          "dev"
+        ],
+        "cwd": "D:\\ucsc\\Data scientist journey\\Projects\\power\\WindPower\\front",
+        "env": {
+          "FIGMA_DEV_SERVER_HOST": "127.0.0.1",
+          "PORT": "5173"
+        },
+        "prependPath": [],
+        "platform": "win32"
+      }
+    ]
+  }
+}
