@@ -41,7 +41,7 @@ function isWindAnalysis(value: unknown): value is WindAnalysis {
 
 async function requestWindAnalysis(params: URLSearchParams): Promise<WindAnalysis> {
   const response = await fetch(
-    `http://127.0.0.1:8000/api/analysis/wind/decision?${params}`,
+    `/api/analysis/wind/decision?${params}`,
   )
 
   if (!response.ok) {
