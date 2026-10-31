@@ -117,7 +117,7 @@ export async function fetchHistoricalAccuracy(
     end_date: range.endDate,
   })
   const response = await fetch(
-    `http://127.0.0.1:8000/api/analysis/wind/historical-accuracy?${params}`,
+    `/api/analysis/wind/historical-accuracy?${params}`,
     { signal },
   )
 

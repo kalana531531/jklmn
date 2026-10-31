@@ -1,0 +1,18 @@
+﻿services:
+  backend:
+    build:
+      context: ./back
+    container_name: windsight-backend
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build:
+      context: ./front
+    container_name: windsight-frontend
+    ports:
+      - "8443:8443"
+    environment:
+      API_PROXY_TARGET: http://backend:8000
+    depends_on:
+      - backend
