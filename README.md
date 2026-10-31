@@ -40,25 +40,55 @@ The application uses React and TypeScript for the frontend and Python with FastA
 
 ```text
 WindPower/
-│
+├── .dockerignore                      # Excludes repository and generated files from Docker build contexts.
+├── .gitignore                         # Lists repository-level files Git should ignore.
+├── compose.yaml                       # Defines the frontend and backend Docker services and their ports.
 ├── front/
-│   ├── src/
-│   │   ├── api/
-│   │   └── ...
+│   ├── .dockerignore                  # Excludes frontend dependencies and generated files from its image context.
+│   ├── .gitattributes                 # Configures Git LFS handling for large and binary files.
+│   ├── .gitignore                     # Excludes frontend dependencies, build output, and local files from Git.
+│   ├── .mise.toml                     # Pins the Node.js and pnpm tool versions.
+│   ├── AGENTS.md                      # Provides frontend project and contribution guidance.
+│   ├── CLAUDE.md                      # Points AI coding tools to the frontend guidance.
+│   ├── .tsupgrader/
+│   │   └── runtime-validation/
+│   │       ├── eval-plan.json         # Describes recorded frontend validation checks.
+│   │       └── standalone-result.json # Stores results from a frontend validation run.
+│   ├── Dockerfile                     # Installs frontend dependencies and starts the Vite server.
+│   ├── index.html                     # HTML shell that loads the React application.
+│   ├── package.json                   # Declares frontend dependencies and package scripts.
+│   ├── pnpm-lock.yaml                 # Locks the frontend dependency versions.
+│   ├── tsconfig.json                  # Configures TypeScript compilation and source aliases.
+│   ├── vite.config.ts                 # Configures Vite, React, Tailwind CSS, and the backend API proxy.
 │   ├── public/
-│   ├── Dockerfile
-│   ├── package.json
-│   ├── pnpm-lock.yaml
-│   ├── vite.config.ts
-│   └── index.html
-│
+│   │   └── favicon.svg                # Browser icon for the frontend.
+│   └── src/
+│       ├── App.tsx                    # Defines the dashboard shell and page navigation.
+│       ├── app-state.tsx              # Shares overview and historical analysis state across pages.
+│       ├── dashboard-data.ts          # Supplies dashboard rows and derived accuracy metrics.
+│       ├── index.css                  # Contains global dashboard styles.
+│       ├── main.tsx                   # Mounts the React application and imports global styles.
+│       ├── vite-env.d.ts              # Provides Vite client type declarations.
+│       ├── api/
+│       │   └── historicalAccuracy.ts  # Fetches and validates historical accuracy API responses.
+│       ├── pages/
+│       │   ├── comparison.tsx         # Displays historical forecast-versus-actual comparisons.
+│       │   ├── error-analysis.tsx     # Displays historical forecast-error analysis.
+│       │   └── overview.tsx           # Displays forecast, actual, and publication details.
+│       └── ui/
+│           └── components/
+│               ├── AccuracyMethodNote.tsx       # Explains data sources and accuracy calculations.
+│               ├── AccuracyMetrics.tsx           # Displays forecast accuracy metrics.
+│               ├── ForecastActualChart.tsx      # Charts historical forecasts and actual generation.
+│               ├── ForecastActualChart.test.tsx # Tests chart rendering and metric formatting.
+│               ├── LargestErrorsTable.tsx       # Lists matched records with the largest forecast errors.
+│               └── LargestErrorsTable.test.tsx  # Tests error ordering, missing records, and formatting.
 ├── back/
-│   ├── main.py
-│   ├── requirements.txt
-│   └── Dockerfile
-│
-├── .dockerignore
-├── compose.yaml
+│   ├── .dockerignore                  # Excludes Python environments, caches, and local environment files.
+│   ├── Dockerfile                     # Builds the Python API image and launches it with Uvicorn.
+│   ├── main.py                        # Implements FastAPI endpoints and Elexon BMRS data analysis.
+│   ├── requirements.txt               # Lists the backend Python dependencies.
+│   └── test_main.py                   # Contains backend API tests.
 └── README.md
 ```
 
@@ -108,12 +138,6 @@ To stop and remove the running containers, execute:
 
 ```bash
 docker compose down
-```
-
-To rebuild the containers after making source-code or configuration changes, run:
-
-```bash
-docker compose up --build -d
 ```
 
 ## API Integration
