@@ -94,9 +94,9 @@ WindPower/
 
 ## Deployment
 
-- **Frontend:** [WindSight Dashboard](FRONTEND_DEPLOYMENT_URL)
-- **Backend API:** [WindSight API](BACKEND_DEPLOYMENT_URL)
-- **API Documentation:** [Swagger UI](BACKEND_DEPLOYMENT_URL/docs)
+- **Frontend:** [WindSight Dashboard]( https://windsight-frontend-nu.vercel.app/)
+- **Backend API:** [WindSight API](https://jklmn-one.vercel.app/)
+- **API Documentation:** [Swagger UI]( https://jklmn-one.vercel.app/docs)
 
 *Replace the placeholder URLs with the actual Vercel deployment URLs once deployment is complete.*
 
@@ -128,9 +128,9 @@ This command builds the frontend and backend Docker images and starts both servi
 
 | Service | URL |
 |---|---|
-| Frontend Dashboard | http://localhost:8443 |
+| Frontend Dashboard |http://localhost:8443 |
 | Backend API | http://localhost:8000 |
-| Swagger API Documentation | http://localhost:8000/docs |
+| Swagger API Documentation |    http://localhost:8000/docs |
 
 ### 4. Stop the application
 
